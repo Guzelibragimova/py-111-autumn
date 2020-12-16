@@ -18,12 +18,14 @@ def push(elem: Any) -> None:
     return None
 
 
-def pop() -> Any:
+def pop(elem) -> Any:
     """
     Pop element from the top of the stack. If not elements - should return None.
 
     :return: popped element
     """
+    print(elem)
+    my_stack.pop(elem)
     return None
 
 
@@ -54,3 +56,7 @@ if __name__ == '__main__':
     clear()
     print(my_stack)
     clear()
+
+    print(my_stack)
+    pop(5)
+    print(my_stack)
