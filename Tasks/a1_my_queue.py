@@ -3,6 +3,7 @@ My little Queue
 """
 from typing import Any
 
+#сделали очередь списком
 my_queue = [] #слева конец очереди, справа начало
 
 def enqueue(elem: Any) -> None:
@@ -22,8 +23,9 @@ def dequeue() -> Any:
 
     :return: dequeued element
     """
+    my_queue.pop() if my_queue else None
     return None
-
+#берет элемент с начала и возвращает
 
 def peek(ind: int = 0) -> Any:
     """
@@ -32,9 +34,9 @@ def peek(ind: int = 0) -> Any:
     :param ind: index of element (count from the beginning)
     :return: peeked element
     """
-    print(ind)
-    return None
+    return my_queue[len(my_queue)-1]
 
+#посмотреть элемент но его не вытаскивает, где начало очереди оттуда идем
 
 def clear() -> None:
     """
