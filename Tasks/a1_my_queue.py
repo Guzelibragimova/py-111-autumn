@@ -36,6 +36,7 @@ def peek(ind: int = 0) -> Any:
     """
     #return my_queue[len(my_queue)-1]
     return None if ind >= len(my_queue) else my_queue[-1 - ind]
+#если начало слева то возвращаем ind
 
 #посмотреть элемент но его не вытаскивает, где начало очереди оттуда идем
 
