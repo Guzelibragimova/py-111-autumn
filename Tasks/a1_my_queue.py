@@ -23,8 +23,8 @@ def dequeue() -> Any:
 
     :return: dequeued element
     """
-    my_queue.pop() if my_queue else None
-    return None
+    return my_queue.pop() if my_queue else None
+
 #берет элемент с начала и возвращает
 
 def peek(ind: int = 0) -> Any:
@@ -34,7 +34,8 @@ def peek(ind: int = 0) -> Any:
     :param ind: index of element (count from the beginning)
     :return: peeked element
     """
-    return my_queue[len(my_queue)-1]
+    #return my_queue[len(my_queue)-1]
+    return None if ind >= len(my_queue) else my_queue[-1 - ind]
 
 #посмотреть элемент но его не вытаскивает, где начало очереди оттуда идем
 
@@ -44,4 +45,5 @@ def clear() -> None:
 
     :return: None
     """
+    my_queue.clear()
     return None
