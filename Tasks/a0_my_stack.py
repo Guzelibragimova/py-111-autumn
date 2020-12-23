@@ -63,5 +63,7 @@ if __name__ == '__main__':
     push(47)
     peek(6)
     clear()
+    print(my_list_stack)
     push(4)
+    print(my_list_stack)
 
