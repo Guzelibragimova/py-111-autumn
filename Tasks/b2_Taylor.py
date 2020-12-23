@@ -37,8 +37,8 @@ def sinx(x: Union[int, float]) -> float:
     :return: sin(x) value
     """
     def item(n):
-        #n каждый раз новое по этой формуле считаем
-        return ((-1) ** n) * ((x ** (2 * n - 1))/(factorial(2 * n - 1)))
+        # n каждый раз новое по этой формуле считаем
+        return (pow(-1, n)) * (pow(x, 2 * n + 1))/(factorial(2 * n + 1))
 
     sum_ = 0
     for i in count():
