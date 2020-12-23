@@ -16,7 +16,8 @@ def push(elem: Any) -> None:
     # Операция добавления элемента на стек называется «push», удаления — «pop». Последний добавленный элемент называется верхушкой
     # стека, или «top», и его можно посмотреть с помощью операции «peek»
     # запушить значит на верх добавить, справа как append
-    print(elem)
+
+
     my_list_stack.append(elem)
     return None
 
@@ -27,9 +28,10 @@ def pop() -> Any:
 
     :return: popped element
     """
-    my_list_stack.pop()
-    print(my_list_stack)
-    return None
+    if not my_list_stack:
+        return None
+
+    return my_list_stack.pop(-1)
 
 
 def peek(ind: int = 0) -> Any:
@@ -66,4 +68,9 @@ if __name__ == '__main__':
     print(my_list_stack)
     push(4)
     print(my_list_stack)
+
+    print(pop())
+    print(my_list_stack)
+
+    print(pop())
 
