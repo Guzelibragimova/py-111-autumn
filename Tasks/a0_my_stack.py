@@ -2,7 +2,8 @@
 My little Stack
 """
 from typing import Any
-
+my_list_stack = [5, 6, 7]
+print(my_list_stack)
 
 def push(elem: Any) -> None:
     """
@@ -11,7 +12,15 @@ def push(elem: Any) -> None:
     :param elem: element to be pushed
     :return: Nothing
     """
-    print(elem)
+    # Операция добавления элемента на стек называется «push», удаления — «pop». Последний добавленный элемент называется верхушкой
+    # стека, или «top», и его можно посмотреть с помощью операции «peek»
+
+
+    # my_list_stack.append(6)
+    # my_list_stack.append(7)
+    # my_list_stack.append(5)
+    my_list_stack.append(elem)
+    print(my_list_stack)
     return None
 
 
@@ -21,6 +30,8 @@ def pop() -> Any:
 
     :return: popped element
     """
+    my_list_stack.pop()
+    print(my_list_stack)
     return None
 
 
@@ -31,6 +42,7 @@ def peek(ind: int = 0) -> Any:
     :param ind: index of element (count from the top, 0 - top, 1 - first from top, etc.)
     :return: peeked element or None if no element in this place
     """
+    my_list_stack.insert(2, -1)
     print(ind)
     return None
 
@@ -42,3 +54,9 @@ def clear() -> None:
     :return: None
     """
     return None
+if __name__ == '__main__':
+    push(52)
+    pop()
+    pop()
+    peek()
+
