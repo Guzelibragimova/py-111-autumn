@@ -1,6 +1,6 @@
 import unittest
 import Tasks.a0_my_stack as my_stack
-
+# импортировали наш файл который тестим
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
