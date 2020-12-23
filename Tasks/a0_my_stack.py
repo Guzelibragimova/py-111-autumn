@@ -30,8 +30,9 @@ def pop() -> Any:
     """
     if not my_list_stack:
         return None
+#pop принимает индекс и можно удалить любой элемент не только последний
+    return my_list_stack.pop()
 
-    return my_list_stack.pop(-1)
 
 
 def peek(ind: int = 0) -> Any:
@@ -43,8 +44,12 @@ def peek(ind: int = 0) -> Any:
     """
     #insert добавляет на место индекса(с 0,1,2) в списке
     # index позволяет узнать индекс или позицию элемента в последовательности
-    a = my_list_stack.index(ind)
-    print(a)
+    #a = my_list_stack.index(ind)
+
+    print(ind)
+    if ind >= len(my_list_stack):
+        return None
+    return my_list_stack[-1 - ind]
 
 
 def clear() -> None:
@@ -58,19 +63,23 @@ def clear() -> None:
 if __name__ == '__main__':
     print(my_list_stack)
     push(52)
-    print(my_list_stack)
+    # print(my_list_stack)
 
-    pop()
-    pop()
+    # pop()
+    # pop()
     push(47)
-    peek(6)
-    clear()
-    print(my_list_stack)
-    push(4)
-    print(my_list_stack)
+    # peek(6)
+    # clear()
+    # print(my_list_stack)
+    # push(4)
+    # print(my_list_stack)
+    #
+    # print(pop())
+    # print(my_list_stack)
+    # print(pop())
 
-    print(pop())
-    print(my_list_stack)
+    print(peek(0))
+    print(peek(1))
+    print(peek(2))
 
-    print(pop())
 
