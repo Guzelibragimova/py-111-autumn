@@ -45,5 +45,6 @@ def clear() -> None:
 
     :return: None
     """
+    my_list_queue.clear()
     return None
 
