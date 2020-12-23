@@ -16,17 +16,17 @@ def ex(x: Union[int, float]) -> float:
     :return: e^x value
     """
     def item(n):
-        #n каждый раз новое по этой формуле считаем
+        # n каждый раз новое по этой формуле считаем
         return (x ** n)/factorial(n)
 
     sum_ = 0
-    for i in count(start=1):
+    for i in count():
         current_value = item(i)
         sum_ += current_value
 
-        if current_value <= DELTA:
+        if abs(current_value) <= DELTA:
             return sum_
-    return 0
+
 
 
 def sinx(x: Union[int, float]) -> float:
@@ -45,8 +45,7 @@ def sinx(x: Union[int, float]) -> float:
         current_value = item(i)
         sum_ += current_value
 
-        if current_value <= DELTA:
+        if abs(current_value) <= DELTA:
             return sum_
 
 
-    return 0
