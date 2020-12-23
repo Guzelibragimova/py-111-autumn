@@ -2,7 +2,11 @@
 Taylor series
 """
 from typing import Union
+from itertools import count
+from math import factorial
 
+
+DELTA = 0.0001
 
 def ex(x: Union[int, float]) -> float:
     """
@@ -11,7 +15,17 @@ def ex(x: Union[int, float]) -> float:
     :param x: x value
     :return: e^x value
     """
-    print(x)
+    def item(n):
+        #n каждый раз новое по этой формуле считаем
+        return (x ** n)/factorial(n)
+
+    sum_ = 0
+    for i in count(start=1):
+        current_value = item(i)
+        sum_ += current_value
+
+        if current_value <= DELTA:
+            return sum_
     return 0
 
 
@@ -22,5 +36,17 @@ def sinx(x: Union[int, float]) -> float:
     :param x: x value
     :return: sin(x) value
     """
-    print(x)
+    def item(n):
+        #n каждый раз новое по этой формуле считаем
+        return ((-1) ** n) * ((x ** (2 * n - 1))/(factorial(2 * n - 1)))
+
+    sum_ = 0
+    for i in count():
+        current_value = item(i)
+        sum_ += current_value
+
+        if current_value <= DELTA:
+            return sum_
+
+
     return 0
