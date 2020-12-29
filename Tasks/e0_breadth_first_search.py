@@ -33,7 +33,7 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
 
 
     return path
-
+fgfgf
 
 if __name__ == '__main__':
     graph = nx.Graph()
