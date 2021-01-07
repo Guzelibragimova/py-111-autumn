@@ -4,16 +4,24 @@ Priority Queue
 Queue priorities are from 0 to 10
 """
 from typing import Any
+from collections import deque
+my_priority_queue = []
 
 
 def enqueue(elem: Any, priority: int = 0) -> None:
-    """
+    """cv
     Operation that add element to the end of the queue
 
     :param elem: element to be added
     :return: Nothing
     """
-    return None
+    a = [i for i in range(elem)]
+    for i in a:
+        my_priority_queue.append(i)
+    sorted_ = []
+    for j in a:
+        sorted_.append(my_priority_queue.extend(elem))
+    print(a, sorted_)
 
 
 def dequeue() -> Any:
@@ -42,3 +50,7 @@ def clear() -> None:
     :return: None
     """
     return None
+
+
+if __name__ == '__main__':
+    enqueue(5)
