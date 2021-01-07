@@ -17,10 +17,10 @@ def enqueue(elem: Any, priority: int = 0) -> None:
     """
     a = [i for i in range(elem)]
     for i in a:
-        my_priority_queue.append(i)
+        my_priority_queue.insert(0, i)
     sorted_ = []
     for j in a:
-        sorted_.append(my_priority_queue.extend(elem))
+        sorted_.append(my_priority_queue.pop())
     print(a, sorted_)
 
 
@@ -53,4 +53,4 @@ def clear() -> None:
 
 
 if __name__ == '__main__':
-    enqueue(5)
+    enqueue(10)
