@@ -5,7 +5,7 @@ Queue priorities are from 0 to 10
 """
 from typing import Any
 from collections import deque
-my_priority_queue = []
+my_priority_queue = deque()
 
 
 def enqueue(elem: Any, priority: int = 0) -> None:
@@ -15,14 +15,20 @@ def enqueue(elem: Any, priority: int = 0) -> None:
     :param elem: element to be added
     :return: Nothing
     """
-    a = [i for i in range(elem)]
-    for i in a:
-        my_priority_queue.insert(-1, i)
-    sorted_ = []
-    for j in a:
-        sorted_.append(my_priority_queue.pop())
-    print(a, sorted_)
 
+    a = [i for i in range(10)]
+
+    for i in a:
+        my_priority_queue.append(elem)
+    # sorted_ = []
+    # for j in a:
+    #     sorted_.append(my_priority_queue.popleft())
+    print(my_priority_queue)
+    if not my_priority_queue:
+        return None
+
+if __name__ == '__main__':
+    enqueue(5)
 
 def dequeue() -> Any:
     """
@@ -30,7 +36,8 @@ def dequeue() -> Any:
 
     :return: dequeued element
     """
-    return None
+    return  my_priority_queue.pop() if my_priority_queue else None
+
 
 
 def peek(ind: int = 0, priority: int = 0) -> Any:
