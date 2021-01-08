@@ -14,8 +14,9 @@ def min_search(arr: Sequence) -> int:
 
     min_el = arr[0]
     for i in arr:
-        if i < min_el:
-            min_el = i
-
-    return min_el
-    # return -1
+        if arr[i] < min_el:
+            min_el = arr[i]
+            return i
+    return -1
+if __name__ == '__main__':
+    min_search(arr=[])
