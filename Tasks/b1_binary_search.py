@@ -11,6 +11,10 @@ def binary_search(elem: int, arr: Sequence) -> Optional[int]:
     """
     first_el = 0
     last_el = len(arr) - 1
+    if arr[last_el] == elem:
+        return last_el
+    if arr[first_el] == elem:
+        return first_el
     while first_el < last_el:
         mid = (first_el + last_el) // 2
         elem_found = arr[mid]
