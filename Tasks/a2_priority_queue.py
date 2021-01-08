@@ -17,7 +17,7 @@ def enqueue(elem: Any, priority: int = 0) -> None:
     """
     a = [i for i in range(elem)]
     for i in a:
-        my_priority_queue.insert(0, i)
+        my_priority_queue.insert(-1, i)
     sorted_ = []
     for j in a:
         sorted_.append(my_priority_queue.pop())
@@ -40,7 +40,9 @@ def peek(ind: int = 0, priority: int = 0) -> Any:
     :param ind: index of element (count from the beginning)
     :return: peeked element
     """
-    return None
+
+    return my_priority_queue[ind]
+
 
 
 def clear() -> None:
@@ -49,8 +51,7 @@ def clear() -> None:
 
     :return: None
     """
+    my_priority_queue.clear()
     return None
 
 
-if __name__ == '__main__':
-    enqueue(10)
