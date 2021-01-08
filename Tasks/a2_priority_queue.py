@@ -15,6 +15,14 @@ def enqueue(elem: Any, priority: int = 0) -> None:
     :param elem: element to be added
     :return: Nothing
     """
+    a = [i for i in range(elem)] # создаем список, чтобы заполнять кучу
+    for i in a:
+        my_priority_queue.insert(i, priority)
+
+    res = []
+    for j in a:
+        res.append(my_priority_queue.popleft()) #убираем по элементу из кучи
+
     my_priority_queue.insert(0, elem)
     return None
 
