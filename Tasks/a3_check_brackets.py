@@ -5,6 +5,7 @@ def check_brackets(brackets_row: str) -> bool:
     :param brackets_row: input string to be checked
     :return: True if valid, False otherwise
     """
+
     my_brackets_stack = []
     count = 0
     for i in brackets_row:
