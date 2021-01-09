@@ -16,6 +16,7 @@ def factorial_iterative(n: int) -> int:
     :param n: int > 0
     :return: factorial of n
     """
-
-    print(n)
-    return 0
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
