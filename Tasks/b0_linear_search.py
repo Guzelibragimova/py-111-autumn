@@ -21,7 +21,3 @@ def min_search(arr: Sequence) -> int:
             return i
         print(i)
     return min_el
-
-if __name__ == '__main__':
-    my_list = [9]
-    print(min_search(my_list))
