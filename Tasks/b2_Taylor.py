@@ -8,6 +8,7 @@ from math import factorial
 
 DELTA = 0.0001
 
+
 def ex(x: Union[int, float]) -> float:
     """
     Calculate value of e^x with Taylor series
@@ -28,7 +29,6 @@ def ex(x: Union[int, float]) -> float:
             return sum_
 
 
-
 def sinx(x: Union[int, float]) -> float:
     """
     Calculate sin(x) with Taylor series
@@ -47,5 +47,3 @@ def sinx(x: Union[int, float]) -> float:
 
         if abs(current_value) <= DELTA:
             return sum_
-
-
