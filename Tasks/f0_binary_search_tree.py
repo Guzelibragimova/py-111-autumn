@@ -4,8 +4,20 @@ or with dicts (smth like {'key': 0, value: 123, 'left': {...}, 'right':{...}})
 """
 
 from typing import Any, Optional, Tuple
-# import networkx as nx
+import networkx as nx
 
+
+bts = {}
+
+# bts = {
+#     'key': 0,
+#     'value': 123,
+#     'left': {
+#         'key': 1,
+#         'value': [1, 4],
+#
+#         ...},
+#     'right':{...}
 
 def insert(key: int, value: Any) -> None:
     """
@@ -15,8 +27,32 @@ def insert(key: int, value: Any) -> None:
     :param value: value associated with key
     :return: None
     """
-    print(key, value)
-    return None
+    global bts
+    def insert_(subtree: dict):
+        if not subtree:
+            "Создание нового потомка листа"
+            subtree['key'] = key
+            subtree['value'] = value
+            subtree['left'] = {}
+            subtree['right'] = {}
+        else:
+            dst_subtree = insert_(subtree['right']) if key >= subtree['key'] else subtree['left']
+            insert_(dst_subtree)
+        insert_(bts)
+    # if not bts:
+    #     bts['key'] = key
+    #     bts['value'] = value
+    #     bts['left'] = {}
+    #     bts['right'] = {}
+    # else:
+    #     new_subtree = bts['right'] if key >= bts['key'] else bts['left']
+    #     insert(new_subtree)
+    # insert(bts)
+
+
+
+        print(key, value)
+        return None
 
 
 def remove(key: int) -> Optional[Tuple[int, Any]]:
@@ -47,4 +83,6 @@ def clear() -> None:
 
     :return: None
     """
+    global bts
+    bts.clear
     return None

@@ -16,19 +16,20 @@ def binary_search(elem: int, arr: Sequence) -> Optional[int]:
         return last_el
     if arr[first_el] == elem:
         return first_el
-    while first_el < last_el:
-        mid = (first_el + last_el)
+    if first_el > last_el:
+        return None
+    while first_el <= last_el:
+        mid = (first_el + last_el) // 2
         elem_found = arr[mid]
         if elem_found == elem:
             return mid
         if elem_found > elem:
             last_el = mid - 1
         else:
-            last_el = mid + 1
-            return None
-        if first_el > last_el:
-            return None
-
-    print(elem, arr)
+            first_el = mid + 1
     return None
+
+
+    # print(elem, arr)
+    # return None
 
