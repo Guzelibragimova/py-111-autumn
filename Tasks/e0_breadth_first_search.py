@@ -16,7 +16,8 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
     :param start_node: starting node for search
     :return: list of nodes in the visited order
     """
-    # visited = {node: False for node in g.nodes} #как словарь посещенных вершин джи нодес содержит все вершины что я их не посещала
+    # visited = {node: False for node in g.nodes} # как словарь посещенных вершин джи нодес
+    # содержит все вершины что я их не посещала
     # d = deque()
     #
     # d.append(start_node)
