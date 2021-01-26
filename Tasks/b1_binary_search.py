@@ -12,24 +12,21 @@ def binary_search(elem: int, arr: Sequence) -> Optional[int]:
     first_el = 0
     last_el = len(arr) - 1
 
-    if arr[last_el] == elem:
-        return last_el
-    if arr[first_el] == elem:
-        return first_el
-    if first_el > last_el:
-        return None
+    # if arr[last_el] == elem:
+    #     return last_el
+    # if arr[first_el] == elem:
+    #     return first_el
+    # if first_el > last_el:
+    #     return None
+
     while first_el <= last_el:
         mid = (first_el + last_el) // 2
-        elem_found = arr[mid]
-        if elem_found == elem:
-            return mid
-        if elem_found > elem:
+        if elem < arr[mid]:
             last_el = mid - 1
-        else:
+        elif elem > arr[mid]:
             first_el = mid + 1
+        else:
+            return mid
+    print(elem, arr)
     return None
-
-
-    # print(elem, arr)
-    # return None
 
