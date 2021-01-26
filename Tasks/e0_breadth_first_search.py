@@ -16,23 +16,34 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
     :param start_node: starting node for search
     :return: list of nodes in the visited order
     """
-    visited = {node: False for node in g.nodes} #как словарь посещенных вершин джи нодес содержит все вершины что я их не посещала
-    d = deque()
+    # visited = {node: False for node in g.nodes} #как словарь посещенных вершин джи нодес содержит все вершины что я их не посещала
+    # d = deque()
+    #
+    # d.append(start_node)
+    # visited[start_node] = True
+    # path = []
+    #
+    # while d:
+    #     current_node = d.popleft() #снимаем с очереди новы элеимент
+    #     path.append(current_node) # добавляем в путь
+    #     for neib in g[current_node]:
+    #         if not visited[neib]: # по ключу обращаемся к вершине графу
+    #             d.append(neib)
+    #             visited[neib] = True
+    #
+    #
+    # return path
 
-    d.append(start_node)
-    visited[start_node] = True
-    path = []
-
-    while d:
-        current_node = d.popleft() #снимаем с очереди новы элеимент
-        path.append(current_node) # добавляем в путь
-        for neib in g[current_node]:
-            if not visited[neib]: # по ключу обращаемся к вершине графу
-                d.append(neib)
-                visited[neib] = True
-
-
-    return path
+    visited = []
+    queue1 = deque([start_node])
+    visited.append(start_node)
+    while queue1:
+        vertex = queue1.popleft()
+        for neighbour in g[vertex]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue1.append(neighbour)
+    return visited
 
 
 if __name__ == '__main__':
