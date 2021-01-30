@@ -1,3 +1,6 @@
+"""
+My little Stack
+"""
 from typing import Any
 
 my_list_stack = [5, 6, 7]
